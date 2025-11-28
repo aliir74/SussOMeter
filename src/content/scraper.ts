@@ -5,7 +5,7 @@ export function scrapeHoverCard(hoverCard: Element): ProfileData | null {
     // Get username from the hover card link
     const profileLink = hoverCard.querySelector('a[role="link"][href^="/"]');
     const href = profileLink?.getAttribute('href');
-    const username = href?.replace('/', '').split('/')[0];
+    const username = href?.slice(1).split('/')[0];
 
     if (!username) return null;
 
@@ -30,7 +30,7 @@ export function scrapeHoverCard(hoverCard: Element): ProfileData | null {
 
     // Check for bio (description text)
     const bioElement = hoverCard.querySelector('[data-testid="UserDescription"]');
-    const hasBio = !!bioElement && bioElement.textContent!.trim().length > 0;
+    const hasBio = !!bioElement && (bioElement.textContent?.trim().length ?? 0) > 0;
 
     // Check for verified badge
     const verifiedBadge = hoverCard.querySelector('[data-testid="icon-verified"]') ||
