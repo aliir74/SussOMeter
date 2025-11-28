@@ -31,12 +31,14 @@ export function calculateSusRating(profile: ProfileData): SusRating {
   }
 
   // Tweets per day: > 50 or 0 = red
-  if (profile.joinDate && profile.tweetCount >= 0) {
+  if (profile.tweetCount === 0) {
+    redFlags++;
+  } else if (profile.joinDate && profile.tweetCount > 0) {
     const daysSinceJoin = Math.max(1, Math.floor(
       (Date.now() - profile.joinDate.getTime()) / (1000 * 60 * 60 * 24)
     ));
     const tweetsPerDay = profile.tweetCount / daysSinceJoin;
-    if (tweetsPerDay > 50 || profile.tweetCount === 0) {
+    if (tweetsPerDay > 50) {
       redFlags++;
     }
   }
