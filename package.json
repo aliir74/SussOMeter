@@ -1,6 +1,7 @@
 {
   "name": "munich",
   "version": "1.0.0",
+  "packageManager": "pnpm@9.0.0",
   "description": "A chrome extension to identify bots account in twitter",
   "main": "index.js",
   "directories": {

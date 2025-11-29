@@ -4,8 +4,8 @@ Chrome extension that shows colored badges next to Twitter/X usernames to indica
 
 ## Installation (Development)
 
-1. Run `npm install`
-2. Run `npm run build`
+1. Run `pnpm install`
+2. Run `pnpm build`
 3. Open Chrome and go to `chrome://extensions/`
 4. Enable "Developer mode" (top right)
 5. Click "Load unpacked"
@@ -33,5 +33,5 @@ Chrome extension that shows colored badges next to Twitter/X usernames to indica
 
 ## Development
 
-- `npm run dev` - Development mode with hot reload
-- `npm run build` - Production build
+- `pnpm dev` - Development mode with hot reload
+- `pnpm build` - Production build
